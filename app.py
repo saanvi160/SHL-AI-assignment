@@ -1,3 +1,16 @@
+import sys
+
+# Patch distutils if missing (Python 3.12 fix)
+try:
+    import distutils
+except ImportError:
+    import setuptools
+    import types
+    sys.modules['distutils'] = types.ModuleType("distutils")
+    sys.modules['distutils.dir_util'] = types.ModuleType("distutils.dir_util")
+    from setuptools._distutils.dir_util import copy_tree
+    sys.modules['distutils.dir_util'].copy_tree = copy_tree
+
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
