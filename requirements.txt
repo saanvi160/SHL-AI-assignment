@@ -1,0 +1,9 @@
+streamlit
+requests 
+beautifulsoup4 
+pandas 
+numpy 
+google-generativeai 
+sentence-transformers 
+scikit-learn
+python-dotenv
