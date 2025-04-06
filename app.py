@@ -27,10 +27,11 @@ st.set_page_config(
 
 # Initialize the embedding model
 # @st.cache_resource
-def load_embedding_model():
-    return SentenceTransformer('all-MiniLM-L6-v2')
+# def load_embedding_model():
+#     return SentenceTransformer('all-MiniLM-L6-v2')
 
-embedding_model = load_embedding_model()
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+
 
 # Scrape and process SHL assessment data
 @st.cache_data
