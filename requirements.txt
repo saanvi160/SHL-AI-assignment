@@ -7,6 +7,6 @@ sentence-transformers==2.2.2
 scikit-learn
 python-dotenv
 streamlit==1.31.1
-torch==2.0.1
+torch==2.2.0
 transformers==4.36.2
 huggingface_hub==0.20.3
