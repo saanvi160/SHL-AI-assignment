@@ -557,33 +557,5 @@ def main():
                         else:
                             st.warning("No relevant assessments found. Please try a different query.")
                     
-    # Display sample queries
-    with st.sidebar:
-        st.subheader("Sample Queries")
-        st.write("Click to use these sample queries:")
-        
-        sample_queries = [
-            "Software Engineer with strong problem-solving skills and ability to work in a team",
-            "Sales Manager with excellent communication and leadership skills",
-            "Data Analyst with statistical knowledge and attention to detail",
-            "Customer Service Representative with empathy and conflict resolution abilities"
-        ]
-        
-        for query in sample_queries:
-            if st.button(query, key=query):
-                # This will be handled by the session state in Streamlit
-                st.session_state.sample_query = query
-                # Use st.rerun() instead of st.experimental_rerun()
-                st.rerun()
-    
-    # Apply sample query if selected
-    if hasattr(st.session_state, 'sample_query'):
-        query = st.session_state.sample_query
-        del st.session_state.sample_query
-        
-        if input_method == "Enter job description text" or input_method == "Enter specific requirements":
-            st.text_area("Enter job description:" if input_method == "Enter job description text" else "Enter job requirements:", 
-                        value=query, height=200, key="filled_query")
-
 if __name__ == "__main__":
     main()
