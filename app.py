@@ -26,7 +26,7 @@ st.set_page_config(
 )
 
 # Initialize the embedding model
-@st.cache_resource
+# @st.cache_resource
 def load_embedding_model():
     return SentenceTransformer('all-MiniLM-L6-v2')
 
